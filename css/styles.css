@@ -1,0 +1,2397 @@
+/* css/styles.css */
+
+
+
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #050404;
+    color: #333;
+}
+
+
+
+/* Header Section */
+#header-section {
+    /* margin-top: 40px; */
+    text-align: center;
+    padding: 100px 20px; /* Add padding to create space around the text */
+    background-color: black; /* Background color of your choice */
+    color: white; /* Text color */
+    font-family: 'Montserrat', sans-serif;
+    padding-bottom: 325px;
+}
+
+
+
+
+/* Header Section Styling */
+#header-section h1 {
+    font-size: 3em; /* Larger font size for emphasis */
+    font-weight: bold; /* Bold font weight */
+    text-align: center; /* Center the text inside the header */
+    font-family: 'Montserrat', sans-serif; /* Distinctive font family */
+    background: linear-gradient(90deg, #0b396b, #0f5bac, #ffffff); /* UAE flag colors */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    background-size: 300%; /* Adjust to ensure all colors are visible */
+    padding: 20px;
+    border-radius: 15px; /* Rounded corners for the box */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Prominent shadow for depth */
+    display: inline-block; /* Allows centering with margin auto */
+    text-transform: uppercase; /* All text uppercase for distinction */
+    letter-spacing: 2px; /* Increased letter spacing */
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    margin: 0 auto; /* Centers the header horizontally */
+    animation: gradientShift 5s ease infinite;
+}
+
+/* Pseudo-element for the writing and erasing effect */
+#header-section h1::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: black; /* Light effect */
+    transform: skewX(-45deg);
+    z-index: 2; /* Above the text */
+    animation: slideInOut 10s ease infinite; /* Combined animation */
+}
+
+
+
+
+/* Typing animation */
+#typing-text {
+    font-size: 2em;
+    color: #0b396b; /* Color for the typing text */
+    font-weight: bold;
+    white-space: nowrap; /* Prevent the text from wrapping */
+    overflow: hidden; /* Hide the overflow */
+    border-right: 4px solid; /* Blinking cursor */
+    width: 0; /* Initially hidden */
+    animation: typing 4s steps(40, end) infinite, blink-caret 0.75s step-end infinite;
+    /* text-align: left; */
+}
+
+/* Typing animation */
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+/* Blinking cursor */
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: #0b396b; }
+}
+
+/* Button Styling */
+.about-me-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #132a42;
+    color: white;
+    font-size: 1.2em;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    animation: glow 3s ease-in-out infinite;
+
+}
+
+
+
+
+
+
+/* Main Content */
+main {
+    width: 80%;
+    margin: 20px auto;
+}
+
+
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+
+
+
+
+/* Navigation Bar Styles */
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Sticky Navbar */
+.navbar {
+    position: sticky;
+    top: 0;
+    background-color: black; /* Dark background */
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000; /* Ensure it stays above other content */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Optional: Adds a subtle shadow */
+}
+
+/* Left side - Logo/Name */
+.navbar-left {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+/* Right side - Navigation Links */
+.navbar-right ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar-right ul li {
+    display: inline;
+}
+
+.navbar-right ul li a {
+    text-decoration: none;
+    color: #fff; /* Default color */
+    font-size: 1.1em;
+    padding: 5px 10px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Hover Effect for Navigation Links */
+.navbar-right ul li a:hover {
+    color:#146ecd;
+}
+
+/* Active Navigation Link */
+/* .navbar-right ul li a.active {
+    color: #146ecd; 
+    border-bottom: 2px solid #146ecd; 
+} */
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar-right ul {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+    }
+
+    .navbar-right ul li {
+        display: block;
+        text-align: left;
+        width: 100%;
+    }
+
+    .navbar-right ul li a {
+        padding: 10px;
+        width: 100%;
+        display: block;
+    }
+}
+
+
+.navbar-left a {
+    text-decoration: none;
+    color: inherit;
+    font-size: inherit;
+    font-family: inherit;
+}
+
+.navbar-left a:hover {
+    color: #146ecd; /* Optional: Add a hover effect if you like */
+}
+
+
+
+
+header {
+    margin-top: 60px; /* Adjust the header margin to account for the fixed nav */
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+}
+
+/* Travel Tips Section */
+/* Travel Tips Section */
+.tips-container {
+    margin: 20px 0;
+    padding: 20px;
+    /* background-color: #1c1c1c; */
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+#tips {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Section Header Styling */
+.tips_section-header {
+    font-size: 3em; /* Larger font size for emphasis */
+    font-weight: bold; /* Bold font weight */
+    text-align: center; /* Center the text inside the header */
+    font-family: 'Montserrat', sans-serif; /* Distinctive font family */
+    background: linear-gradient(90deg,#031b35, #0b396b, #ffffff); /* UAE flag colors */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    background-size: 300%; /* Adjust to ensure all colors are visible */
+    padding: 20px;
+    /* padding-top: 200px; */
+    border-radius: 15px; /* Rounded corners for the box */
+    background-color: red; /* Dark blue background color for the box */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Prominent shadow for depth */
+    display: inline-block; /* Allows centering with margin auto */
+    text-transform: uppercase; /* All text uppercase for distinction */
+    letter-spacing: 2px; /* Increased letter spacing */
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    margin: 0 auto; /* Centers the header horizontally */
+    animation: gradientShift 5s ease infinite;
+
+
+    /* to add another border */
+    /* border-top: 5px solid #0b396b; */
+    /* padding-top: 5px; */
+}
+
+/* Pseudo-element for the writing and erasing effect */
+.tips_section-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: black; /* Light effect */
+    transform: skewX(-45deg);
+    z-index: 2; /* Above the text */
+    animation: slideInOut 10s ease infinite; /* Combined animation */
+}
+
+
+/* Individual Tip Section */
+.tip-section {
+    margin-bottom: 20px;
+    /* background-color: #2b2b2b; */
+    background-color: black;
+    border-radius: 10px;
+    padding: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, max-height 0.5s ease;
+    overflow: hidden;
+}
+
+.tip-section h3 {
+    font-size: 1.8em;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    border-bottom: 5px solid #0b396b;
+    padding-bottom: 5px;
+}
+
+.tip-section .toggle-icon {
+    font-size: 1.5em;
+    color: #fff;
+    transition: transform 0.3s ease;
+    animation: glow 2s ease-in-out infinite;
+}
+
+/* .tip-section:hover {
+    background-color: #1f1f1f;
+    
+} */
+
+.tip-section .toggle-icon {
+    font-size: 1.2em;
+    color: #fff;
+    transition: transform 0.3s ease;
+    animation: glow2 1s ease-in-out infinite;
+}
+
+
+
+@keyframes glow2 {
+    0%, 100% {
+        /* box-shadow: 0 0 10px #0b396b, 0 0 20px #0b396b, 0 0 30px #0b396b; */
+        text-shadow: 0 0 20px #146ecd, 0 0 30px #146ecd, 0 0 40px #146ecd;
+    }
+    50% {
+        
+        text-shadow: 0 0 10px black, 0 0 20px black, 0 0 30px black;
+    }
+}
+
+
+
+/* Rotate the icon by 45 degrees when the section is active */
+.tip-section.active .toggle-icon {
+    transform: rotate(45deg);
+}
+
+/* Content inside tip sections */
+.tip-content {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+    padding-top: 10px;
+    padding-left: 20px;
+    font-size: large;
+}
+
+.tip-section.active .tip-content {
+    max-height: 500px; /* Adjust based on content length */
+    opacity: 1;
+}
+
+/* Fade-in animation for initial sections */
+.fade-in {
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+#intro {
+    pointer-events: none; /* Disables hover and click events */
+    background-color: black; /* Ensure it matches the default background */
+}
+
+/* Maintain hover effect for other tip sections */
+/* .tip-section:not(#intro):hover {
+    background-color: #1f1f1f;
+} */
+
+/* Specific Styling for Intro Section Paragraph */
+#intro p {
+    font-size: 1.2em;
+    color: #ffffff;
+}
+
+
+
+
+
+.question {
+    margin-bottom: 20px;
+}
+
+.result {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f0f8ff;
+    border: 1px solid #cce7ff;
+    border-radius: 5px;
+}
+
+
+
+.map-responsive {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: #f4f4f4; /* Optional background color */
+    margin-top: 20px;
+    border-radius: 8px; /* Optional rounded corners */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Optional shadow */
+}
+
+.map-responsive iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.map-toggle {
+    /* font-size: large; */
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 16px;
+    font-size: 22px;
+    color: white;
+    background-color: #0b396b;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    
+    /* Add these properties */
+    display: block; /* Ensure the button is a block-level element */
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center; /* Optional if you have inner text or icon alignment */
+    animation: glow 3s ease-in-out infinite;
+}
+
+
+.map-toggle:hover {
+    background-color: #132a42;
+}
+
+
+
+.country {
+    text-align: center;
+    background: black;
+    color: white;
+    margin-bottom: 20px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.country-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+}
+
+.carousel-image {
+    flex: 0 0 100%; /* Ensure each image takes up full width */
+    height: 700px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;                /* ADDED AFTERWARDS */
+}
+
+.carousel-prev, .carousel-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-90%);
+    /* transform:translateX(80%); */
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1;
+}
+
+.carousel-prev {
+    left: 10px;
+}
+
+.carousel-next {
+    right: 10px;
+}
+
+.country-description {
+    width: 100%;
+    text-align: center;
+}
+
+.map-toggle {
+    margin-top: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.map-responsive {
+    margin-top: 20px;
+}
+
+
+
+
+
+
+.uae-header {
+    font-size: 3em; /* Larger font size for emphasis */
+    font-weight: bold; /* Bold font weight */
+    text-align: center; /* Center the text inside the header */
+    font-family: 'Montserrat', sans-serif; /* Distinctive font family */
+    background: linear-gradient(90deg, #036026, #ffffff, #ff0000); /* UAE flag colors */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    background-size: 300%; /* Adjust to ensure all colors are visible */
+    padding: 20px;
+    border-radius: 15px; /* Rounded corners for the box */
+    background-color: red; /* Dark blue background color for the box */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Prominent shadow for depth */
+    display: inline-block; /* Allows centering with margin auto */
+    text-transform: uppercase; /* All text uppercase for distinction */
+    letter-spacing: 2px; /* Increased letter spacing */
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    margin: 0 auto; /* Centers the header horizontally */
+    animation: gradientShift 5s ease infinite;
+}
+
+/* Pseudo-element for the writing and erasing effect */
+.uae-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: black; /* Light effect */
+    transform: skewX(-45deg);
+    z-index: 2; /* Above the text */
+    animation: slideInOut 10s ease infinite; /* Combined animation */
+}
+
+/* Keyframes for sliding in and sliding out the text */
+@keyframes slideInOut {
+    0% {
+        left: -100%; /* Start off-screen */
+    }
+    25% {
+        left: 100%; /* Move across to the right */
+    }
+    50% {
+        left: 100%; /* Pause briefly */
+    }
+    75% {
+        left: -100%; /* Move back to the left */
+    }
+    100% {
+        left: -100%; /* End back off-screen to loop */
+    }
+}
+
+
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+
+
+.malaysia-header {
+    font-size: 3em; /* Larger font size for emphasis */
+    font-weight: bold; /* Bold font weight */
+    text-align: center; /* Center the text inside the header */
+    font-family: 'Montserrat', sans-serif; /* Distinctive font family */
+    background: linear-gradient(90deg, #010066, #ffcc00, #f00000, #ffffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    background-size: 300%; /* Adjust to ensure all colors are visible */
+    padding: 20px;
+    border-radius: 15px; /* Rounded corners for the box */
+    background-color: red; /* Dark blue background color for the box */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Prominent shadow for depth */
+    display: inline-block; /* Allows centering with margin auto */
+    text-transform: uppercase; /* All text uppercase for distinction */
+    letter-spacing: 2px; /* Increased letter spacing */
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    margin: 0 auto; /* Centers the header horizontally */
+    animation: gradientShift 5s ease infinite;
+}
+
+/* Pseudo-element for the writing and erasing effect */
+.malaysia-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: black; /* Light effect */
+    transform: skewX(-45deg);
+    z-index: 2; /* Above the text */
+    animation: slideInOut 10s ease infinite; /* Combined animation */
+}
+
+
+/* 
+
+
+
+} */
+.singapore-header {
+    font-size: 3em; /* Larger font size for emphasis */
+    font-weight: bold; /* Bold font weight */
+    text-align: center; /* Center the text inside the header */
+    font-family: 'Montserrat', sans-serif; /* Distinctive font family */
+    background: linear-gradient(90deg, #ff0000, #ffffff);
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    background-size: 300%; /* Adjust to ensure all colors are visible */
+    padding: 20px;
+    border-radius: 15px; /* Rounded corners for the box */
+    background-color: red; /* Dark blue background color for the box */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Prominent shadow for depth */
+    display: inline-block; /* Allows centering with margin auto */
+    text-transform: uppercase; /* All text uppercase for distinction */
+    letter-spacing: 2px; /* Increased letter spacing */
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    margin: 0 auto; /* Centers the header horizontally */
+    animation: gradientShift 5s ease infinite;
+}
+
+/* Pseudo-element for the writing and erasing effect */
+.singapore-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: black; /* Light effect */
+    transform: skewX(-45deg);
+    z-index: 2; /* Above the text */
+    animation: slideInOut 10s ease infinite; /* Combined animation */
+}
+
+
+
+
+.china-header {
+    font-size: 3em; /* Larger font size for emphasis */
+    font-weight: bold; /* Bold font weight */
+    text-align: center; /* Center the text inside the header */
+    font-family: 'Montserrat', sans-serif; /* Distinctive font family */
+    background: linear-gradient(90deg, #ff0000, #ffde00);
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    background-size: 300%; /* Adjust to ensure all colors are visible */
+    padding: 20px;
+    border-radius: 15px; /* Rounded corners for the box */
+    background-color: red; /* Dark blue background color for the box */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Prominent shadow for depth */
+    display: inline-block; /* Allows centering with margin auto */
+    text-transform: uppercase; /* All text uppercase for distinction */
+    letter-spacing: 2px; /* Increased letter spacing */
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    margin: 0 auto; /* Centers the header horizontally */
+    animation: gradientShift 5s ease infinite;
+}
+
+/* Pseudo-element for the writing and erasing effect */
+.china-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: black; /* Light effect */
+    transform: skewX(-45deg);
+    z-index: 2; /* Above the text */
+    animation: slideInOut 10s ease infinite; /* Combined animation */
+}
+
+
+
+.saudi-header {
+    font-size: 3em; /* Larger font size for emphasis */
+    font-weight: bold; /* Bold font weight */
+    text-align: center; /* Center the text inside the header */
+    font-family: 'Montserrat', sans-serif; /* Distinctive font family */
+    background: linear-gradient(90deg, #006c35, #ffffff);
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    background-size: 300%; /* Adjust to ensure all colors are visible */
+    padding: 20px;
+    border-radius: 15px; /* Rounded corners for the box */
+    background-color: red; /* Dark blue background color for the box */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Prominent shadow for depth */
+    display: inline-block; /* Allows centering with margin auto */
+    text-transform: uppercase; /* All text uppercase for distinction */
+    letter-spacing: 2px; /* Increased letter spacing */
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    margin: 0 auto; /* Centers the header horizontally */
+    animation: gradientShift 5s ease infinite;
+}
+
+/* Pseudo-element for the writing and erasing effect */
+.saudi-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: black; /* Light effect */
+    transform: skewX(-45deg);
+    z-index: 2; /* Above the text */
+    animation: slideInOut 10s ease infinite; /* Combined animation */
+}
+
+
+
+.turkey-header {
+    font-size: 3em; /* Larger font size for emphasis */
+    font-weight: bold; /* Bold font weight */
+    text-align: center; /* Center the text inside the header */
+    font-family: 'Montserrat', sans-serif; /* Distinctive font family */
+    background: linear-gradient(90deg, #e30a17, #ffffff); 
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    background-size: 300%; /* Adjust to ensure all colors are visible */
+    padding: 20px;
+    border-radius: 15px; /* Rounded corners for the box */
+    background-color: red; /* Dark blue background color for the box */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Prominent shadow for depth */
+    display: inline-block; /* Allows centering with margin auto */
+    text-transform: uppercase; /* All text uppercase for distinction */
+    letter-spacing: 2px; /* Increased letter spacing */
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    margin: 0 auto; /* Centers the header horizontally */
+    animation: gradientShift 5s ease infinite;
+}
+
+/* Pseudo-element for the writing and erasing effect */
+.turkey-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: black; /* Light effect */
+    transform: skewX(-45deg);
+    z-index: 2; /* Above the text */
+    animation: slideInOut 10s ease infinite; /* Combined animation */
+}
+
+
+
+.italy-header {
+    font-size: 3em; /* Larger font size for emphasis */
+    font-weight: bold; /* Bold font weight */
+    text-align: center; /* Center the text inside the header */
+    font-family: 'Montserrat', sans-serif; /* Distinctive font family */
+    background: linear-gradient(90deg, #009246, #ffffff, #ce2b37);
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    background-size: 300%; /* Adjust to ensure all colors are visible */
+    padding: 20px;
+    border-radius: 15px; /* Rounded corners for the box */
+    background-color: red; /* Dark blue background color for the box */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Prominent shadow for depth */
+    display: inline-block; /* Allows centering with margin auto */
+    text-transform: uppercase; /* All text uppercase for distinction */
+    letter-spacing: 2px; /* Increased letter spacing */
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    margin: 0 auto; /* Centers the header horizontally */
+    animation: gradientShift 5s ease infinite;
+}
+
+/* Pseudo-element for the writing and erasing effect */
+.italy-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: black; /* Light effect */
+    transform: skewX(-45deg);
+    z-index: 2; /* Above the text */
+    animation: slideInOut 10s ease infinite; /* Combined animation */
+}
+
+
+.vatican-header {
+    font-size: 3em; /* Larger font size for emphasis */
+    font-weight: bold; /* Bold font weight */
+    text-align: center; /* Center the text inside the header */
+    font-family: 'Montserrat', sans-serif; /* Distinctive font family */
+    background: linear-gradient(90deg, #ffffff, #ffe000);
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    background-size: 300%; /* Adjust to ensure all colors are visible */
+    padding: 20px;
+    border-radius: 15px; /* Rounded corners for the box */
+    background-color: red; /* Dark blue background color for the box */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Prominent shadow for depth */
+    display: inline-block; /* Allows centering with margin auto */
+    text-transform: uppercase; /* All text uppercase for distinction */
+    letter-spacing: 2px; /* Increased letter spacing */
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    margin: 0 auto; /* Centers the header horizontally */
+    animation: gradientShift 5s ease infinite;
+}
+
+/* Pseudo-element for the writing and erasing effect */
+.vatican-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: black; /* Light effect */
+    transform: skewX(-45deg);
+    z-index: 2; /* Above the text */
+    animation: slideInOut 10s ease infinite; /* Combined animation */
+}
+
+
+.georgia-header {
+    font-size: 3em; /* Larger font size for emphasis */
+    font-weight: bold; /* Bold font weight */
+    text-align: center; /* Center the text inside the header */
+    font-family: 'Montserrat', sans-serif; /* Distinctive font family */
+    background: linear-gradient(90deg, #ffffff, #e03a3e); 
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    background-size: 300%; /* Adjust to ensure all colors are visible */
+    padding: 20px;
+    border-radius: 15px; /* Rounded corners for the box */
+    background-color: red; /* Dark blue background color for the box */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Prominent shadow for depth */
+    display: inline-block; /* Allows centering with margin auto */
+    text-transform: uppercase; /* All text uppercase for distinction */
+    letter-spacing: 2px; /* Increased letter spacing */
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    margin: 0 auto; /* Centers the header horizontally */
+    animation: gradientShift 5s ease infinite;
+}
+
+/* Pseudo-element for the writing and erasing effect */
+.georgia-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: black; /* Light effect */
+    transform: skewX(-45deg);
+    z-index: 2; /* Above the text */
+    animation: slideInOut 10s ease infinite; /* Combined animation */
+}
+
+.france-header {
+    font-size: 3em; /* Larger font size for emphasis */
+    font-weight: bold; /* Bold font weight */
+    text-align: center; /* Center the text inside the header */
+    font-family: 'Montserrat', sans-serif; /* Distinctive font family */
+    background: linear-gradient(90deg, #0055a4, #ffffff, #ef4135); 
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    background-size: 300%; /* Adjust to ensure all colors are visible */
+    padding: 20px;
+    border-radius: 15px; /* Rounded corners for the box */
+    background-color: red; /* Dark blue background color for the box */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Prominent shadow for depth */
+    display: inline-block; /* Allows centering with margin auto */
+    text-transform: uppercase; /* All text uppercase for distinction */
+    letter-spacing: 2px; /* Increased letter spacing */
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    margin: 0 auto; /* Centers the header horizontally */
+    animation: gradientShift 5s ease infinite;
+}
+
+/* Pseudo-element for the writing and erasing effect */
+.france-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: black; /* Light effect */
+    transform: skewX(-45deg);
+    z-index: 2; /* Above the text */
+    animation: slideInOut 10s ease infinite; /* Combined animation */
+}
+
+
+.switzerland-header {
+    font-size: 3em; /* Larger font size for emphasis */
+    font-weight: bold; /* Bold font weight */
+    text-align: center; /* Center the text inside the header */
+    font-family: 'Montserrat', sans-serif; /* Distinctive font family */
+    background: linear-gradient(90deg, #ff0000, #ffffff); 
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    background-size: 300%; /* Adjust to ensure all colors are visible */
+    padding: 20px;
+    border-radius: 15px; /* Rounded corners for the box */
+    background-color: red; /* Dark blue background color for the box */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Prominent shadow for depth */
+    display: inline-block; /* Allows centering with margin auto */
+    text-transform: uppercase; /* All text uppercase for distinction */
+    letter-spacing: 2px; /* Increased letter spacing */
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    margin: 0 auto; /* Centers the header horizontally */
+    animation: gradientShift 5s ease infinite;
+}
+
+/* Pseudo-element for the writing and erasing effect */
+.switzerland-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: black; /* Light effect */
+    transform: skewX(-45deg);
+    z-index: 2; /* Above the text */
+    animation: slideInOut 10s ease infinite; /* Combined animation */
+}
+
+
+.belgium-header {
+    font-size: 3em; /* Larger font size for emphasis */
+    font-weight: bold; /* Bold font weight */
+    text-align: center; /* Center the text inside the header */
+    font-family: 'Montserrat', sans-serif; /* Distinctive font family */
+    background: linear-gradient(90deg, #000000, #ffd700, #ff0000);
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    background-size: 300%; /* Adjust to ensure all colors are visible */
+    padding: 20px;
+    border-radius: 15px; /* Rounded corners for the box */
+    background-color: red; /* Dark blue background color for the box */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Prominent shadow for depth */
+    display: inline-block; /* Allows centering with margin auto */
+    text-transform: uppercase; /* All text uppercase for distinction */
+    letter-spacing: 2px; /* Increased letter spacing */
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    margin: 0 auto; /* Centers the header horizontally */
+    animation: gradientShift 5s ease infinite;
+}
+
+/* Pseudo-element for the writing and erasing effect */
+.belgium-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: black; /* Light effect */
+    transform: skewX(-45deg);
+    z-index: 2; /* Above the text */
+    animation: slideInOut 10s ease infinite; /* Combined animation */
+}
+
+
+
+.spain-header {
+    font-size: 3em; /* Larger font size for emphasis */
+    font-weight: bold; /* Bold font weight */
+    text-align: center; /* Center the text inside the header */
+    font-family: 'Montserrat', sans-serif; /* Distinctive font family */
+    background: linear-gradient(90deg, #aa151b, #f1bf00); 
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    background-size: 300%; /* Adjust to ensure all colors are visible */
+    padding: 20px;
+    border-radius: 15px; /* Rounded corners for the box */
+    background-color: red; /* Dark blue background color for the box */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Prominent shadow for depth */
+    display: inline-block; /* Allows centering with margin auto */
+    text-transform: uppercase; /* All text uppercase for distinction */
+    letter-spacing: 2px; /* Increased letter spacing */
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    margin: 0 auto; /* Centers the header horizontally */
+    animation: gradientShift 5s ease infinite;
+}
+
+/* Pseudo-element for the writing and erasing effect */
+.spain-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: black; /* Light effect */
+    transform: skewX(-45deg);
+    z-index: 2; /* Above the text */
+    animation: slideInOut 10s ease infinite; /* Combined animation */
+}
+
+
+
+.liechtenstein-header {
+    font-size: 3em; /* Larger font size for emphasis */
+    font-weight: bold; /* Bold font weight */
+    text-align: center; /* Center the text inside the header */
+    font-family: 'Montserrat', sans-serif; /* Distinctive font family */
+    background: linear-gradient(90deg, #002fa7, #d52b1e, #ffcc00);  
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    background-size: 300%; /* Adjust to ensure all colors are visible */
+    padding: 20px;
+    border-radius: 15px; /* Rounded corners for the box */
+    background-color: red; /* Dark blue background color for the box */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Prominent shadow for depth */
+    display: inline-block; /* Allows centering with margin auto */
+    text-transform: uppercase; /* All text uppercase for distinction */
+    letter-spacing: 2px; /* Increased letter spacing */
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    margin: 0 auto; /* Centers the header horizontally */
+    animation: gradientShift 5s ease infinite;
+}
+
+/* Pseudo-element for the writing and erasing effect */
+.liechtenstein-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: black; /* Light effect */
+    transform: skewX(-45deg);
+    z-index: 2; /* Above the text */
+    animation: slideInOut 10s ease infinite; /* Combined animation */
+}
+
+.iceland-header {
+    font-size: 3em; /* Larger font size for emphasis */
+    font-weight: bold; /* Bold font weight */
+    text-align: center; /* Center the text inside the header */
+    font-family: 'Montserrat', sans-serif; /* Distinctive font family */
+    background: linear-gradient(90deg, #003897, #ffffff, #d72828);  
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    background-size: 300%; /* Adjust to ensure all colors are visible */
+    padding: 20px;
+    border-radius: 15px; /* Rounded corners for the box */
+    background-color: red; /* Dark blue background color for the box */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Prominent shadow for depth */
+    display: inline-block; /* Allows centering with margin auto */
+    text-transform: uppercase; /* All text uppercase for distinction */
+    letter-spacing: 2px; /* Increased letter spacing */
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    margin: 0 auto; /* Centers the header horizontally */
+    animation: gradientShift 5s ease infinite;
+}
+
+/* Pseudo-element for the writing and erasing effect */
+.iceland-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: black; /* Light effect */
+    transform: skewX(-45deg);
+    z-index: 2; /* Above the text */
+    animation: slideInOut 10s ease infinite; /* Combined animation */
+}
+
+
+.austria-header {
+    font-size: 3em; /* Larger font size for emphasis */
+    font-weight: bold; /* Bold font weight */
+    text-align: center; /* Center the text inside the header */
+    font-family: 'Montserrat', sans-serif; /* Distinctive font family */
+    background: linear-gradient(90deg, #ed2939, #ffffff);
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    background-size: 300%; /* Adjust to ensure all colors are visible */
+    padding: 20px;
+    border-radius: 15px; /* Rounded corners for the box */
+    background-color: red; /* Dark blue background color for the box */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Prominent shadow for depth */
+    display: inline-block; /* Allows centering with margin auto */
+    text-transform: uppercase; /* All text uppercase for distinction */
+    letter-spacing: 2px; /* Increased letter spacing */
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    margin: 0 auto; /* Centers the header horizontally */
+    animation: gradientShift 5s ease infinite;
+}
+
+/* Pseudo-element for the writing and erasing effect */
+.austria-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: black; /* Light effect */
+    transform: skewX(-45deg);
+    z-index: 2; /* Above the text */
+    animation: slideInOut 10s ease infinite; /* Combined animation */
+}
+
+
+
+.hungary-header {
+    font-size: 3em; /* Larger font size for emphasis */
+    font-weight: bold; /* Bold font weight */
+    text-align: center; /* Center the text inside the header */
+    font-family: 'Montserrat', sans-serif; /* Distinctive font family */
+    background: linear-gradient(90deg, #ce2939, #ffffff, #477050);
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    background-size: 300%; /* Adjust to ensure all colors are visible */
+    padding: 20px;
+    border-radius: 15px; /* Rounded corners for the box */
+    background-color: red; /* Dark blue background color for the box */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Prominent shadow for depth */
+    display: inline-block; /* Allows centering with margin auto */
+    text-transform: uppercase; /* All text uppercase for distinction */
+    letter-spacing: 2px; /* Increased letter spacing */
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    margin: 0 auto; /* Centers the header horizontally */
+    animation: gradientShift 5s ease infinite;
+}
+
+/* Pseudo-element for the writing and erasing effect */
+.hungary-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: black; /* Light effect */
+    transform: skewX(-45deg);
+    z-index: 2; /* Above the text */
+    animation: slideInOut 10s ease infinite; /* Combined animation */
+}
+
+
+
+.uk-header {
+    font-size: 3em; /* Larger font size for emphasis */
+    font-weight: bold; /* Bold font weight */
+    text-align: center; /* Center the text inside the header */
+    font-family: 'Montserrat', sans-serif; /* Distinctive font family */
+    background: linear-gradient(90deg, #00247d, #ffffff, #cf142b); 
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    background-size: 300%; /* Adjust to ensure all colors are visible */
+    padding: 20px;
+    border-radius: 15px; /* Rounded corners for the box */
+    background-color: red; /* Dark blue background color for the box */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Prominent shadow for depth */
+    display: inline-block; /* Allows centering with margin auto */
+    text-transform: uppercase; /* All text uppercase for distinction */
+    letter-spacing: 2px; /* Increased letter spacing */
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    margin: 0 auto; /* Centers the header horizontally */
+    animation: gradientShift 5s ease infinite;
+}
+
+/* Pseudo-element for the writing and erasing effect */
+.uk-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: black; /* Light effect */
+    transform: skewX(-45deg);
+    z-index: 2; /* Above the text */
+    animation: slideInOut 10s ease infinite; /* Combined animation */
+}
+
+
+.germany-header {
+    font-size: 3em; /* Larger font size for emphasis */
+    font-weight: bold; /* Bold font weight */
+    text-align: center; /* Center the text inside the header */
+    font-family: 'Montserrat', sans-serif; /* Distinctive font family */
+    background: linear-gradient(90deg, #000000, #dd0000, #ffce00);
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    background-size: 300%; /* Adjust to ensure all colors are visible */
+    padding: 20px;
+    border-radius: 15px; /* Rounded corners for the box */
+    background-color: red; /* Dark blue background color for the box */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Prominent shadow for depth */
+    display: inline-block; /* Allows centering with margin auto */
+    text-transform: uppercase; /* All text uppercase for distinction */
+    letter-spacing: 2px; /* Increased letter spacing */
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    margin: 0 auto; /* Centers the header horizontally */
+    animation: gradientShift 5s ease infinite;
+}
+
+/* Pseudo-element for the writing and erasing effect */
+.germany-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: black; /* Light effect */
+    transform: skewX(-45deg);
+    z-index: 2; /* Above the text */
+    animation: slideInOut 10s ease infinite; /* Combined animation */
+}
+
+
+
+.poland-header {
+    font-size: 3em; /* Larger font size for emphasis */
+    font-weight: bold; /* Bold font weight */
+    text-align: center; /* Center the text inside the header */
+    font-family: 'Montserrat', sans-serif; /* Distinctive font family */
+    background: linear-gradient(90deg, #ffffff, #dc143c);
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    background-size: 300%; /* Adjust to ensure all colors are visible */
+    padding: 20px;
+    border-radius: 15px; /* Rounded corners for the box */
+    background-color: red; /* Dark blue background color for the box */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Prominent shadow for depth */
+    display: inline-block; /* Allows centering with margin auto */
+    text-transform: uppercase; /* All text uppercase for distinction */
+    letter-spacing: 2px; /* Increased letter spacing */
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    margin: 0 auto; /* Centers the header horizontally */
+    animation: gradientShift 5s ease infinite;
+}
+
+/* Pseudo-element for the writing and erasing effect */
+.poland-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: black; /* Light effect */
+    transform: skewX(-45deg);
+    z-index: 2; /* Above the text */
+    animation: slideInOut 10s ease infinite; /* Combined animation */
+}
+
+.czech-header {
+    font-size: 3em; /* Larger font size for emphasis */
+    font-weight: bold; /* Bold font weight */
+    text-align: center; /* Center the text inside the header */
+    font-family: 'Montserrat', sans-serif; /* Distinctive font family */
+    background: linear-gradient(90deg, #11457e, #ffffff, #d7141a); 
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    background-size: 300%; /* Adjust to ensure all colors are visible */
+    padding: 20px;
+    border-radius: 15px; /* Rounded corners for the box */
+    background-color: red; /* Dark blue background color for the box */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Prominent shadow for depth */
+    display: inline-block; /* Allows centering with margin auto */
+    text-transform: uppercase; /* All text uppercase for distinction */
+    letter-spacing: 2px; /* Increased letter spacing */
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    margin: 0 auto; /* Centers the header horizontally */
+    animation: gradientShift 5s ease infinite;
+}
+
+/* Pseudo-element for the writing and erasing effect */
+.czech-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: black; /* Light effect */
+    transform: skewX(-45deg);
+    z-index: 2; /* Above the text */
+    animation: slideInOut 10s ease infinite; /* Combined animation */
+}
+
+.rodrigues-header {
+    font-size: 3em; /* Larger font size for emphasis */
+    font-weight: bold; /* Bold font weight */
+    text-align: center; /* Center the text inside the header */
+    font-family: 'Montserrat', sans-serif; /* Distinctive font family */
+    background: linear-gradient(90deg, #ee1c25, #003da5, #fef200, #009739);
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    background-size: 300%; /* Adjust to ensure all colors are visible */
+    padding: 20px;
+    border-radius: 15px; /* Rounded corners for the box */
+    background-color: red; /* Dark blue background color for the box */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Prominent shadow for depth */
+    display: inline-block; /* Allows centering with margin auto */
+    text-transform: uppercase; /* All text uppercase for distinction */
+    letter-spacing: 2px; /* Increased letter spacing */
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    margin: 0 auto; /* Centers the header horizontally */
+    animation: gradientShift 5s ease infinite;
+}
+
+/* Pseudo-element for the writing and erasing effect */
+.rodrigues-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: black; /* Light effect */
+    transform: skewX(-45deg);
+    z-index: 2; /* Above the text */
+    animation: slideInOut 10s ease infinite; /* Combined animation */
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+
+/* Description section styling */
+.country-description {
+    padding: 20px;
+    background-color: black;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+}
+
+/* Headings inside the description */
+.country-description h3 {
+    font-size: 1.5em;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: white; /* A rich, deep color to differentiate headings */
+    border-bottom: 2px solid #0b396b;
+    padding-bottom: 5px;
+}
+
+
+
+/* Paragraphs inside the description */
+.country-description p {
+    font-size: 1em;
+    margin-bottom: 15px;
+    color: white; /* Slightly lighter color for text */
+}
+
+
+
+
+
+
+
+
+
+/* About Me Section */
+#about-me {
+    padding: 50px 20px;
+    background-color: black; /* Light background color */
+    color: white; /* Darker text color for readability */
+}
+
+.about-me-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 20px; /* Space between text and photo */
+    flex-wrap: wrap; /* Allow content to wrap on smaller screens */
+}
+
+/* Text Section */
+.about-me-text {
+    flex: 1; /* Allow text section to take up available space */
+    max-width: 1200px;
+}
+
+
+
+#about-me h2  {
+    font-size: 3em; /* Larger font size for emphasis */
+    font-weight: bold; /* Bold font weight */
+    /* Center the text inside the header */
+    font-family: 'Montserrat', sans-serif; /* Distinctive font family */
+    background: linear-gradient(90deg,#031b35, #0b396b, #ffffff);
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    background-size: 300%; /* Adjust to ensure all colors are visible */
+    /* padding: 20px; */
+    padding-top: 20px;
+    padding-left: 600px;
+    padding-bottom: 25px;
+
+    border-radius: 15px; /* Rounded corners for the box */
+    background-color: red; /* Dark blue background color for the box */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Prominent shadow for depth */
+    display: block;/* Allows centering with margin auto */
+    width: 100%; 
+    text-transform: uppercase; /* All text uppercase for distinction */
+    letter-spacing: 2px; /* Increased letter spacing */
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    margin: 0 auto; /* Centers the header horizontally */
+    animation: gradientShift 5s ease infinite;
+}
+
+/* Pseudo-element for the writing and erasing effect */
+#about-me h2::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: black; /* Light effect */
+    transform: skewX(-45deg);
+    z-index: 2; /* Above the text */
+    animation: slideInOut 10s ease infinite; /* Combined animation */
+}
+
+
+.about-me-text p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.about-me-photo {
+    position: relative;
+    flex-shrink: 0;
+    text-align: right;
+}
+
+.about-me-photo img {
+    width: 450px;
+    height: 450px;
+    border-radius: 50%; 
+    object-fit: cover; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+    position: relative;
+    z-index: 2;
+}
+
+
+/* .about-me-photo::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 500px; 
+    height: 500px;
+    border-radius: 50%;
+    background: conic-gradient(
+        #146ecd 0deg 45deg, 
+        transparent 45deg 180deg,
+        #146ecd 180deg 225deg, 
+        transparent 225deg 360deg
+    ); 
+    transform: translate(-50%, -50%);
+    z-index: 1; 
+    animation: rotateCircle 5s linear infinite;
+} */
+
+
+/* @keyframes rotateCircle {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+} */
+
+
+@keyframes glow {
+    0%, 100% {
+        /* box-shadow: 0 0 10px #0b396b, 0 0 20px #0b396b, 0 0 30px #0b396b; */
+        box-shadow: 0 0 20px #146ecd, 0 0 30px #146ecd, 0 0 40px #146ecd;
+    }
+    50% {
+        
+        box-shadow: 0 0 10px black, 0 0 20px black, 0 0 30px black;
+    }
+}
+
+.about-me-photo img {
+    /* border: 5px solid white; */
+    animation: glow 2s ease-in-out infinite;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-me-container {
+        flex-direction: column;
+        text-align: center; /* Center text for smaller screens */
+    }
+    
+    .about-me-photo {
+        margin-top: 20px;
+        text-align: center; /* Center the photo on smaller screens */
+    }
+}
+
+
+
+/* About Me Section */
+#about-me {
+    padding: 50px 20px;
+    background-color: black;
+    color: white;
+}
+
+.about-me-container {
+    display: flex;
+    align-items: flex-start; /* Align text and image to the top */
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 20px;
+    flex-wrap: wrap; /* Allow content to wrap on smaller screens */
+}
+
+/* Text Section */
+.about-me-text {
+    flex: 1;
+    max-width: 600px; /* Restrict the maximum width of the text section */
+}
+
+/* Header Text */
+#about-me h2 {
+    font-size: 3em;
+    font-weight: bold;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(90deg, #031b35, #0b396b, #ffffff);
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    background-size: 300%;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: red;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    display: block;
+    width: 100%;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    margin: 0 auto;
+    animation: gradientShift 5s ease infinite;
+}
+
+/* Pseudo-element for the writing and erasing effect */
+#about-me h2::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: black;
+    transform: skewX(-45deg);
+    z-index: 2;
+    animation: slideInOut 10s ease infinite;
+}
+
+/* Paragraph Styling */
+.about-me-text p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+/* Photo Section */
+.about-me-photo {
+    flex-shrink: 0;
+    text-align: right;
+}
+
+.about-me-photo img {
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 2;
+    animation: glow 2s ease-in-out infinite;
+}
+
+
+
+/* Social Media Icons Container */
+.social-icons {
+    width: 100%;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    text-align: center;
+}
+
+/* Individual Social Icon */
+.social-icon {
+    background-color: #0b396b;
+    color: #fff;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 1.5em;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icon:hover {
+    background-color: black;
+    color: #0b396b;
+    transform: scale(1.1);
+    animation: glow 2s ease-in-out infinite;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-me-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-me-photo {
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .social-icons {
+        flex-direction: row;
+    }
+}
+
+
+
+
+/* General Styling for Quiz Section */
+
+
+.quiz_section-header {
+    font-size: 3em; /* Larger font size for emphasis */
+    font-weight: bold; /* Bold font weight */
+    text-align: center; /* Center the text inside the header */
+    font-family: 'Montserrat', sans-serif; /* Distinctive font family */
+    background: linear-gradient(90deg,#031b35, #0b396b, #ffffff); /* UAE flag colors */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    background-size: 300%; /* Adjust to ensure all colors are visible */
+    padding: 20px;
+    /* padding-top: 200px; */
+    border-radius: 15px; /* Rounded corners for the box */
+    background-color: red; /* Dark blue background color for the box */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Prominent shadow for depth */
+    display: inline-block; /* Allows centering with margin auto */
+    text-transform: uppercase; /* All text uppercase for distinction */
+    letter-spacing: 2px; /* Increased letter spacing */
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    margin: 0 auto; /* Centers the header horizontally */
+    animation: gradientShift 5s ease infinite;
+
+
+    /* to add another border */
+    /* border-top: 5px solid #0b396b; */
+    /* padding-top: 5px; */
+}
+
+/* Pseudo-element for the writing and erasing effect */
+.quiz_section-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: black; /* Light effect */
+    transform: skewX(-45deg);
+    z-index: 2; /* Above the text */
+    animation: slideInOut 10s ease infinite; /* Combined animation */
+}
+
+
+
+#quiz {
+    text-align: center; 
+    padding: 20px;
+    padding-top: 80px;
+    background-color: black;
+    border-radius: 8px;
+    max-width: 1000px;
+    margin: 0 auto; 
+}
+
+
+h2, h3 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.flashcard h3{
+    text-align: left;
+}
+
+.quiz_p p{
+    color:white;
+    font-size: large;
+    padding-bottom: 30px;
+}
+
+
+#start-quiz, #restart-quiz {
+    background-color: #0b396b;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    animation: glow 2s ease-in-out infinite;
+}
+
+#start-quiz:hover, #restart-quiz:hover {
+    background-color: #062f56;
+}
+
+
+.flashcard {
+    display: none;
+    /* background-color: #0b396b; */
+    background-color: black;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateX(-100%); 
+    transition: opacity 0.5s ease, transform 0.5s ease; 
+}
+
+.flashcard.active {
+    display: block;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.flashcard button {
+    display: block;
+    /* background-color: #0b396b; */
+    /* background-color: black; */
+    color: black;
+    border: none;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: large;
+}
+
+.flashcard button:hover {
+    background-color: #0b396b;
+    transform: scale(1.1);
+}
+
+
+
+
+/* Styling for the Result Section */
+#result {
+    margin-top: 30px;
+    /* font-family: 'Lobster', cursive;  */
+    background-color: black;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    border-color: black;
+    text-align: center;
+}
+
+#result h3 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+#result-text {
+    font-size: 2.5em;
+    padding-bottom: 20px;
+}
+
+
+
+
+
+/* just added */
+.contact {
+    padding-top: 800px;
+    /* margin-top: -800px;  */
+    padding-bottom: 3rem;
+    color: white;
+}
+
+
+
+.contact h2 {
+    font-size: 3em;
+    font-weight: bold;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(90deg, #031b35, #0b396b, #ffffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    background-size: 300%;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: red;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    display: block; /* Changed to block for centering */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    margin: 0 auto; /* Centers the header horizontally */
+    width: fit-content; /* Shrink to fit content */
+    animation: gradientShift 5s ease infinite;
+}
+
+/* Pseudo-element for the writing and erasing effect */
+.contact h2::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: black;
+    transform: skewX(-45deg);
+    z-index: 2;
+    animation: slideInOut 10s ease infinite;
+}
+
+
+.contact form {
+    max-width: 70rem;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact form .input-box {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.contact form .input-box .input-field {
+    width: 49%;
+    margin: .8rem 0;
+}
+
+.contact form .input-box .input-field input,
+.contact form .textarea-field textarea {
+    width: 100%;
+    padding: 1.5rem;
+    font-size: large;
+    color: white;
+    background: transparent;
+    border: .2rem solid #0b396b; /* Set border color to blue */
+    border-radius: .6rem;
+}
+
+.contact form .input-box .input-field input::placeholder,
+.contact form .textarea-field textarea::placeholder {
+    color: white;
+}
+
+.contact form .textarea-field {
+    margin: .8rem 0 2.7rem;
+    width: 100%;
+}
+
+.contact form .textarea-field textarea {
+    resize: none;
+    height: 150px; /* Set a fixed height for the textarea */
+}
+
+.contact form .btn-box.btns .btn {
+    cursor: pointer;
+    font-size: large;
+    background-color: #0b396b; /* Set button background color to blue */
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: .6rem;
+    transition: background-color 0.3s ease;
+    animation: glow 3s ease-in-out infinite;
+}
+
+.contact form .btn-box.btns .btn:hover {
+    background-color: #132a42; /* Darken button color on hover */
+}
+
+
+
+
+.footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 2rem 9%;
+    background: var(--second-bg-color);
+    color:white;
+}
+
+/* .footer-text,
+.footer-iconTop{
+    position: relative;
+    display: inline-block; */
+
+.footer-text p{
+    font-size: large;
+}
+
+.footer-iconTop a{
+    position:relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: .8rem;
+    background:#0b396b;
+    /* border:.2rem solid white; */
+    border-radius: .6rem;
+    z-index:1;
+    overflow: hidden;
+    color: white;
+    animation: glow 2s ease-in-out infinite;
+    
+}
+
+.footer-iconTop a:hover{
+    transform: scale(1.1);
+}
+
+
+.footer-iconTop a i{
+    font-size: 2.2rem;
+    transition:.5s;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* General Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    /* background-color: #333; */
+    background-color: black;
+    color: white;
+}
+
+.navbar-left {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.navbar-right ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-right ul li {
+    margin-left: 20px;
+}
+
+.navbar-right ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.hamburger, .close-icon {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+    .navbar-right ul {
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        /* background-color: #333; */
+        background-color: black;
+        width: 100%;
+        text-align: center;
+        display: none;
+    }
+
+    .navbar-right ul li {
+        margin: 10px 0;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .close-icon {
+        display: none;
+        font-size: 28px;
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        cursor: pointer;
+    }
+
+    /* Show close icon when menu is open */
+    .navbar-right.show .close-icon {
+        display: block;
+    }
+
+    /* Hide hamburger when menu is open */
+    .navbar-right.show ~ .hamburger {
+        display: none;
+    }
+
+    /* Show navbar on click */
+    .navbar-right ul.show {
+        display: flex;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+:root {
+    --navbar-height: 10vh; /* Adjust this value based on your navbar height in relation to the viewport height */
+}
+
+#about-me,
+#countries,
+#tips,
+#quiz,
+#contact {
+    padding-top: var(--navbar-height);
+    margin-top: calc(-1 * var(--navbar-height));
+}
+
+
+
+:root {
+    --navbar-height: 60px; /* Default value */
+}
+
+@media (max-width: 768px) {
+    :root {
+        --navbar-height: 12vh; /* Adjust for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        --navbar-height: 15vh; /* Adjust for even smaller screens */
+    }
+}
+
+#about-me,
+#countries,
+#tips,
+#quiz,
+#contact {
+    padding-top: var(--navbar-height);
+    margin-top: calc(-1 * var(--navbar-height));
+}
+
+
+
+#quiz {
+    margin-bottom: 50px; /* Increase this value to add more space */
+}
+
+
+#contact {
+    padding-top: 50px; /* Increase this value to add more space */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Container Flexbox */
+.about-me-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Text Section */
+.about-me-text {
+    flex: 1 1 60%;
+    padding-right: 20px;
+}
+
+/* Image Section */
+.about-me-photo {
+    width: 400px; /* or any size you prefer */
+    height: 400px;
+    margin: 0 auto; /* Center the image horizontally */
+}
+
+
+.about-me-photo img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover; /* Ensures the image covers the entire container without distortion */
+    display: block;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-me-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-me-text {
+        padding-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .about-me-photo {
+        margin-bottom: 20px;
+    }
+
+    .about-me-photo img {
+        max-width: 90%;  /* Adjust this to ensure image is visible on small screens */
+        height: auto;
+        margin: 0 auto;
+    }
+}
+
+
+
+
+
+
+
+section#about-me {
+    padding-top: 150px; /* Adjust the value as needed */
+}
+
+
+header#header-section {
+    margin-bottom: 150px; /* Adjust the value as needed */
+}
+
+@media (max-width: 768px) {
+    header#header-section {
+        margin-bottom: 30px; /* Slightly less space on smaller screens */
+    }
+
+    section#about-me {
+        padding-top: 30px; /* Adjust for smaller screens */
+    }
+}
+
+
+
+
+.custom-link {
+    color: #0b396b; /* Choose your desired color */
+    text-decoration: none; /* Removes the underline */
+    font-weight: bold; /* Makes the text bold, optional */
+}
+
+.custom-link:hover {
+    text-decoration:underline; /* Adds underline on hover, optional */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
