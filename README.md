@@ -1,5 +1,5 @@
 # Travel Blog Website
-Welcome to my Travel Blog! 
+Welcome to my Travel Blog!
 
 ## Purpose
 The website's main goals are:
